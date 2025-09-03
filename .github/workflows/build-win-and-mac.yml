@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyinstaller pandas selenium webdriver-manager Pillow pynput pyautogui
+          pip install pyinstaller pandas selenium webdriver-manager Pillow pynput pyautogui openpyxl
 
       # Etapa 4: Executa o PyInstaller para criar o executável
       - name: Build executable with PyInstaller
