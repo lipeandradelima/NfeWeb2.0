@@ -28,16 +28,15 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11' # Você pode usar uma versão mais recente se preferir
+          python-version: '3.11'
 
       # Etapa 3: Instala todas as bibliotecas que o seu script precisa
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyinstaller pandas selenium webdriver-manager-chrome Pillow pynput pyautogui
+          pip install pyinstaller pandas selenium webdriver-manager Pillow pynput pyautogui
 
       # Etapa 4: Executa o PyInstaller para criar o executável
-      # Esta é a etapa mais importante
       - name: Build executable with PyInstaller
         run: |
           pyinstaller --name "NFeAutomator" ^
