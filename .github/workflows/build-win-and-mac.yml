@@ -38,12 +38,13 @@ jobs:
 
       # Etapa 4: Executa o PyInstaller para criar o executável
       - name: Build executable with PyInstaller
-        run: |
-          pyinstaller --name "NFeAutomator" ^
-            --onefile ^
-            --windowed ^
-            --add-data "animation.gif${{ runner.os == 'Windows' && ';' || ':' }}." ^
-            webPDFAUTOGif.py
+        run: >
+          pyinstaller 
+          --name "NFeAutomator" 
+          --onefile 
+          --windowed 
+          --add-data "animation.gif${{ runner.os == 'Windows' && ';' || ':' }}." 
+          webPDFAUTOGif.py
 
       # Etapa 5: Faz o upload do executável como um "artefato" para que você possa baixá-lo
       - name: Upload Artifact
